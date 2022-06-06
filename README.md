@@ -87,7 +87,7 @@ sure before going on to make changes in the database.
     * studentfirstName: VARCHAR(255), not NULL
     * studentlastName: VARCHAR(255), not NULL
     * studentEmail: VARCHAR(255), not NULL   
-    Relationship:   
+    **Relationship:**   
     ➔ 1:M between Students and Check-Outs   
 
 * **CheckedOut**  records the books that are checked out of the library
@@ -96,7 +96,7 @@ sure before going on to make changes in the database.
     * bookISBN: char(13), not NULL
     * checkoutDate: DATE, DEFAULT(curdate())
     * returnDate: DATE, DEFAULT (curdate() + 7)   
-    Relationships:   
+    **Relationships:**  
     ➔ 1:M between Checked-Out and Books   
     ➔ 1:M between Checked-Out and Students   
     ➔ M:M also acts as a join table   
@@ -111,7 +111,7 @@ sure before going on to make changes in the database.
     * genreID: INT, auto_increment, unique, not NULL, FK
     * subjectID: int, auto_increment, unique, not NULL, FK
     * bookCopies: INT, not NULL  
-    Relationships:  
+    **Relationships:**   
     ➔ M:1 between Checked-Out to Books   
     ➔ 1:MbetweenBookstoAuthor   
     ➔ 1:M between Books to Subject   
@@ -121,20 +121,20 @@ sure before going on to make changes in the database.
 *  **Author**  stores details of the different authors in the library
     * authorID: INT, auto_increment, unique, not NULL, PK
     * authorName: VARCHAR(150), not NULL    
-    Relationships:    
+    **Relationships:**   
     ➔ M:1betweenBookstoAuthor   
     
 * **Subject**  stores details of the subjects represented in the library
     * subjectID: int, auto_increment, unique, not NULL, PK
     * subjectName: CHAR(255), not NULL
     * subjectCount: INT, not NULL, zero fill, calculated sum of books in subject   
-    Relationships:   
+    **Relationships:**   
     ➔ 1:M between Subject and Books   
         
 * **Genre**  stores details of the genres represented in the library
     * genreID: INT, auto_increment, unique, not NULL, PK
     * genreName: VARCHAR(45), not NULL, unique    
-    Relationships:   
+    **Relationships:**   
     ➔ 1:M between Genres and Books   
       
 ## Entity-Relationship Diagram
