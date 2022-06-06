@@ -1,0 +1,363 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+
+}
+/*
+ * Formatting the header area
+ */
+header {
+  background-color: #366f73;
+  height: 35px;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+footer {
+  background-color: #282c34;
+  color: white;
+  padding: 5px;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  height: fit-content;
+}
+
+p {
+  line-height: 1;
+  margin: 5px;
+  font-style: italic;
+}
+
+header h1.logo {
+  margin: 0;
+  font-size: 1.7em;
+  color: rgb(6, 11, 1);
+  text-transform: uppercase;
+  float: left;
+}
+header h1.logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/*
+ * Centering the body content
+ */
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+div.home {
+  height: 100%;
+  width: 100%;
+  padding: 10px 0 30px 0;
+  background-color: #E6E6FA;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+div.about {
+  padding: 10px 0 30px 0;
+  background-color: #E6E6FA;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+div {
+  vertical-align: top;
+}
+
+h2 {
+  font-size: 3em;
+  margin-top: 60px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+h3 {
+  font-size: 1.7em;
+  margin-top: 30px;
+  text-align: center;
+  color: #999;
+}
+.menu {
+
+/* try to give the list as much space as needed */
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+/* move the container to the center on the X-axis */
+
+}
+.menu li {
+  display: inline;
+  margin: 0;
+}
+.menu li + li {
+  margin-left: 10px;
+}
+.menu li a {
+  display: inline-block;
+  height: 15px;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+.menu li a:hover {
+    background-color: #50a5ab;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: white;
+  border-width: 2px;
+  width:calc(100% - 80px);
+  border-style: solid;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+th, td {
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  padding: 5px;
+}
+th{ 
+  font-weight:400;
+  color: white;
+  background-color: #366f73;
+  text-align: center;
+}
+caption {
+  font-size:x-large;
+  font-weight: bold;
+  padding: 5px;
+}
+
+td.column_center {
+  text-align: center;
+}
+
+td.column_right {
+  text-align: right;
+}
+
+td.ISBN {
+    width: fit-content;
+}
+
+fieldset, legend, label, input, button {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#center {
+  text-align: center;
+}
+
+#insert {
+  align-self: center;
+  justify-content: center;
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+#inline {
+  display: inline-block;
+}
+
+fieldset {
+  padding-top: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  height: contain;
+  line-height: 25px;
+  display: inline-block;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+input {
+  width: fit-content;
+  padding: 10px;
+  padding-right: 10px;
+  border-color: #5C6372;
+  margin-bottom: 10px;
+}
+
+
+button {
+  padding: 5px;
+  display: inline-block;
+  background-color: #444f64;
+  color: white;
+  width: fit-content;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 3px;
+  border-style: none;
+  box-shadow: 4px 4px 2px #999;
+}
+
+button:hover {
+  background-color: #3a3f4b;
+}
+
+button:active {
+  background-color: #3a3f4b;
+  box-shadow: 2px 2px 0 #999;
+  transform: translateY(2px);
+
+}
+input[type=date] {
+  padding: 5px;
+  display: inline-block;
+  
+  width: fit-content;
+  border-radius: 5px;
+  border-style: ridge;
+  border-color: #282c34;
+
+}
+
+input[type=text] {
+  padding: 5px;
+  display: inline-block;
+  width: fit-content;
+  border-radius: 5px;
+  border-style: ridge;
+  border-color: #282c34;
+
+}
+
+input[type=email] {
+  padding: 5px;
+  display: inline-block;
+  width: fit-content;
+  border-radius: 5px;
+  border-style: ridge;
+  border-color: #282c34;
+
+}
+
+input[type=number] {
+  padding: 5px;
+  display: inline-block;
+  width: fit-content;
+  border-radius: 5px;
+  border-style: ridge;
+  border-color: #282c34;
+}
+
+
+input[type=button] {
+  padding: 5px;
+  display: inline-block;
+  width: fit-content;
+  background-color: #444f64;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 3px;
+  border-style: none;
+  box-shadow: 4px 4px 2px #999;
+}
+
+input[type=button]:hover {
+  background-color: #5f6f8c;
+  box-shadow: 4px 4px 2px #999;
+}
+
+input[type=button]:active {
+  background-color: #7589ae;
+  box-shadow: 2px 2px 0 #999;
+  transform: translateY(2px) translateX(1px);
+}
+
+
+.edit-box{
+  align-items: center;
+  position: absolute;
+  align-self: center;
+  align-content: center;
+
+}
+
+
+.edit{
+  padding: 30px;
+}
+
+.small{
+  width: 50%;
+  display: inline-flex;
+  text-align: center;
+  margin: 0 auto;
+  justify-content: center;
+  
+  
+}
+
+.small th{
+  width: 50%;
+
+}
+input[type=submit] {
+  padding: 5px;
+  display: inline-block;
+  width: fit-content;
+  background-color: #444f64;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 3px;
+  border-style: none;
+  box-shadow: 4px 4px 2px #999;
+}
+
+input[type=submit]:hover {
+  background-color: #5f6f8c;
+  box-shadow: 4px 4px 2px #999;
+}
+
+input[type=submit]:active {
+  background-color: #7589ae;
+  box-shadow: 2px 2px 0 #999;
+  transform: translateY(2px) translateX(1px);
+}
+
+
+
+
+
+
+label {
+    text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+a:hover {
+      color: #7589ae;
+}
+
+
+

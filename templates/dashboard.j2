@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>remedia - dashboard</title>
+        <link rel="stylesheet" type= "text/css" href="/static/app1.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="dashboard">Dashboard</a></li>
+                        <li><a href="catalog">Catalog</a></li>
+                        <li><a href="students">Students</a></li>
+                        <li><a href="loans">Loans</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <h2>Dashboard</h2>
+        <div id="center">
+            <div id="insert">
+                <form method="POST">
+                    <fieldset>
+                        <legend>Quick Check Out</legend>
+
+                        <label for="ISBN">ISBN</label>
+                        <input type="text" id="ISBN" name="ISBN" placeholder="only accepts numbers">
+
+
+                        <label for="studentID">Student ID</label>
+                        <input type="text" id="studentID" name="studentID" placeholder="Scan card/enter student ID">
+
+
+                        <input class="button" type="submit" name="checkout" value="Check Out" style="button">
+                        <input type="button" name="cancel" value="Cancel">
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <table>
+            <caption>Description of Pages</caption>
+            <thead>
+                <tr>
+                    <th>Page</th>
+
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>dashboard</td>
+                    <td>landing page, will have widgets and quick links</td>
+                </tr>
+                <tr>
+                    <td>catalog</td>
+                    <td>main display page of books in the Library, as well as creation, editing, and deleting</td>
+                </tr>
+                <tr>
+                    <td>students</td>
+                    <td>main display page of students, as well as creation, editing, and deleting</td>
+                </tr>
+                <tr>
+                    <td>loans</td>
+                    <td>displays the active loans, as well as where librarian checks in books</td>
+                </tr>
+
+        </table>
+        <footer>
+            <p>© 2022   ||   Clara Watson & Jon Moore</p>
+        </footer>
+    </body>
+    
+</html>

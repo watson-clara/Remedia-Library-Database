@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>remedia - loans</title>
+        <link rel="stylesheet" type= "text/css" href="/static/app1.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav>
+                    <ul class = "menu">
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/catalog">Catalog</a></li>
+                        <li><a href="/students">Students</a></li>
+                        <li><a href="/loans">Loans</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <h2>Loans</h2>
+        <div id="center">
+        <div id="edit">
+            <form method="post">
+                
+                <fieldset>
+                <legend><strong>Return</strong></legend>
+                    <input type="hidden" value="{{data[0].checkoutID}}" id="checkoutID" name="checkoutID" required>
+
+
+                    <input type="submit" value="Submit Return" name="edit_loans" class="button";>
+
+                </fieldset>
+
+            </div>
+        </div>
+
+            <footer>
+                <p>© 2022   ||   Clara Watson & Jon Moore</p>
+            </footer>
+    </body>
+    
+</html>

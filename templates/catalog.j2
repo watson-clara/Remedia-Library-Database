@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>remedia - catalog</title>
+        <link rel="stylesheet" type= "text/css" href="/static/app1.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="dashboard">Dashboard</a></li>
+                        <li><a href="catalog">Catalog</a></li>
+                        <li><a href="students">Students</a></li>
+                        <li><a href="loans">Loans</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <h2>Catalog</h2>
+        <div id="center"> <!--centers the div -->
+            <div id="inline">
+                <form method="POST">
+                    <fieldset>
+                        <legend>Add Book</legend>
+
+                        <label for="Title">Title</label>
+                        <input type="text" id="Title" name="Title" placeholder="Title"><br>
+
+                        <label for="authorName">Author</label>
+                        <input type="text" id="authorName" name="authorName" placeholder="Author"><br>
+
+                        <label for="Publisher">Publisher</label>
+                        <input type="text" id="Publisher" name="Publisher" placeholder="Publisher"><br>
+
+                        <label for="Year">Year</label>
+                        <input type="text" id="Year" name="Year" placeholder="Year"><br>
+
+                        <label for="ISBN">ISBN</label>
+                        <input type="text" pattern="\d*" id="ISBN" name="ISBN" placeholder="only accepts numbers"  maxlength="13" required><br>
+
+                        <label for="Copies">Copies</label>
+                        <input type="number" id="Copies" name="Copies" placeholder="Copies"><br>
+                        <!--submits the adding the book-->
+                        <input class="button" type="submit" name="add_book" value="Submit" style="button" >
+                        
+
+                    </fieldset>
+                </form>
+            </div>
+            <div id="inline"><!--keeps the div inline-->
+                <div id="inline">
+
+                    <form method="POST">
+                        <fieldset>
+                            <legend>Add Author</legend>
+
+                            <label for="authorName">Author</label>
+                            <input type="text" id="authorName" name="authorName" placeholder="Author">
+
+
+                            <input class="button" type="submit" name="add_author" value="Submit" style="button">
+                        
+                        </fieldset>
+                    </form>
+
+
+                </div>
+
+                <div>
+                    <div id="inline"><!--keeps the div inline-->
+                        <form method="POST">
+                            <fieldset>
+                                <legend>Add Subject</legend>
+
+                                <label for="Subject">Subject</label>
+                                <input type="text" id="Subject" name="Subject" placeholder="Subject">
+
+                                <input class="button" type="submit" name="add_subject" value="Submit" style="button">
+                                
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <div id="insert">
+                        <form method="POST">
+                            <fieldset>
+                                <legend>Add Genre</legend>
+
+                                <label for="Genre">Genre</label>
+                                <input type="text" id="Genre" name="Genre" placeholder="Genre" >
+
+                                <input class="button" type="submit" name="add_genre" value="Submit" style="button">
+                            
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <table>
+                {% if data %}
+                <caption>Books</caption>
+                <thead>
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Title</th>
+
+                        <th>Author</th>
+
+                        <th>Publisher</th>
+
+                        <th>Year</th>
+
+                        <th>ISBN</th>
+
+                        <th>Copies</th>
+
+                        <th>Edit</th>
+
+                        <th>Delete</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data %}
+                        <tr>
+                            {% for key in item.keys() %}
+                            <td> {{item[key]}} </td>
+                            {% endfor %}
+                            <td><a href="edit_book/{{item.bookID}}" onClick="update()">Edit</a></td>
+                            <td><a href="delete_book/{{item.bookID}}" onclick="erase()">Delete</a></td>
+                        </tr>
+                    {% endfor %} 
+                </tbody>
+                {% endif %}
+            </table>
+            <br />
+            <div id="center"> 
+        
+            <table >
+                
+                 {% if data2 %}
+                <caption>Authors</caption>
+                <thead>
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+                        
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for item in data2 %}
+                        <tr>
+                            {% for key in item.keys() %}
+                            <td> {{item[key]}} </td>
+                            {% endfor %}
+                            <td><a href="edit_author/{{item.authorID}}" onClick="update()">Edit</a></td>
+                            <td><a href="delete_author/{{item.authorID}}" onclick="erase()">Delete</a></td>
+                        </tr>
+                        {% endfor %} 
+                    </tbody>
+                {% endif %}
+            </table>
+        </div>
+
+            <br />
+            
+
+       
+                <div id="center">
+            <div class="small" id="center"> 
+            <table>
+                
+                 {% if data3 %}
+                <caption>Genre</caption>
+                <thead>
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for item in data3 %}
+                        <tr>
+                            {% for key in item.keys() %}
+                            <td> {{item[key]}} </td>
+                            {% endfor %}
+                            
+                        </tr>
+                        {% endfor %} 
+                    </tbody>
+                {% endif %}
+            </table>
+       
+    </div>
+        
+            <br />
+            
+            <div class="small" id="center"> 
+            <table>
+                
+                 {% if data4 %}
+                <caption>Subject</caption>
+                <thead>
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for item in data4 %}
+                        <tr>
+                            {% for key in item.keys() %}
+                            <td> {{item[key]}} </td>
+                            {% endfor %}
+                            
+                        </tr>
+                        {% endfor %} 
+                    </tbody>
+                {% endif %}
+            </table>
+       
+    </div>
+</div>
+            <br />
+
+
+            <br />
+        </div>
+            <footer>
+                <p>© 2022   ||   Clara Watson & Jon Moore</p>
+            </footer>
+</body>
+    
+</html>

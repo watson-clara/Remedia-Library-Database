@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>remedia - students</title>
+        <link rel="stylesheet" type= "text/css" href="/static/app1.css">
+
+    </head>
+    <body>
+        <header>
+            <div class ="container">
+                <nav>
+                    <ul class = "menu">
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/catalog">Catalog</a></li>
+                        <li><a href="/students">Students</a></li>
+                        <li><a href="/loans">Loans</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        
+<!--
+    FORM FOR DELETING AN AUTHOR  IN THE BOOK TABLE
+-->
+<div id="center">
+<div id="edit">
+            <form method="post">
+                <legend><strong>Delete Author</strong></legend>
+                <fieldset>
+                    <label>Are you sure you would like to delete this author  from the database?</label>
+                    <input type="hidden" value="{{data2[0].authorName}}" id="authorName" name="authorName" required>
+                    <!-- adding the value input attribute allows the text to be prepopulated  -->
+                    <input type="hidden" id="authorName" name="authorName"  value="{{data2[0].authorName}}" required>
+			
+                    <!-- submits the delete request-->
+                    <input type="submit" value="Delete" name="delete_author" class="button";>
+                    <!-- takes the user to the previous page-->
+                    <a href='/students'><input class="btn" type="button" value="Cancel";"> </a>
+
+                    
+            </form>
+	    </div>
+    </div>
+       
+
+            <footer>
+                <p>© 2022   ||   Clara Watson & Jon Moore</p>
+            </footer>
+</body>
+    
+</html>

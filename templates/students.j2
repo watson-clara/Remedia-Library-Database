@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>remedia - students</title>
+        <link rel="stylesheet" type= "text/css" href="/static/app1.css">
+
+    </head>
+    <body>
+        <header>
+            <div class ="container">
+                <nav>
+                    <ul class = "menu">
+                        <li><a href="dashboard">Dashboard</a></li>
+                        <li><a href="catalog">Catalog</a></li>
+                        <li><a href="students">Students</a></li>
+                        <li><a href="loans">Loans</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <h2>Students</h2>
+
+        <div id="center">
+
+            <div id="insert">
+                <form method="POST">
+                    
+                    <fieldset>
+                    <legend>Add Student</legend>
+
+                        <label for="First">First</label>
+                        <input type="text" id="First" name="First" placeholder="First Name">
+
+                        <label for="Last">Last</label>
+                        <input type="text" id="Last" name="Last" placeholder="Last Name">
+
+                        <label for="Email">Email</label>
+                        <input type="email" id="Email" name="Email" placeholder="Email">
+
+                        <input class="button" type="submit" name="add_student" value="Submit" style="button">
+
+                       
+                
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <table>
+            {% if data %}
+                <thead>
+                    <tr>
+                        
+                        <th>ID</th>
+                        
+                        <th>First Name</th>
+                        
+                        <th>Last Name</th>
+                        
+                        <th>Email</th>
+                        
+                        <th>Edit</th>
+
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data %}
+                        <tr>
+                            {% for key in item.keys() %}
+                            <td> {{item[key]}} </td>
+                            {% endfor %}
+                            <td><a href="edit_students/{{item.studentID}}" onClick="update()">Edit</a></td>
+                            <td><a href="delete_student/{{item.studentID}}" onclick="erase()">Delete</a></td>
+                        </tr>
+                        {% endfor %} 
+                {% endif %}
+        </table>
+        
+
+            <footer>
+                <p>© 2022   ||   Clara Watson & Jon Moore</p>
+            </footer>
+</body>
+    
+</html>

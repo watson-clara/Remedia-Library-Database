@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>remedia - students</title>
+        <link rel="stylesheet" type= "text/css" href="/static/app1.css">
+
+    </head>
+    <body>
+        <header>
+            <div class ="container">
+                <nav>
+                    <ul class = "menu">
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/catalog">Catalog</a></li>
+                        <li><a href="/students">Students</a></li>
+                        <li><a href="/loans">Loans</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <h2>Students</h2>
+        <div id="center"> 
+        <div class="" id="edit">
+            <form method="POST">
+                <legend><strong>Edit Student</strong></legend>
+                <fieldset>
+                    <input type="hidden" value="{{data[0].studentID}}" id="studentID" name="studentID" required>
+
+                    <label>First Name:</label> <input type="text" id="First" name="First" value="{{data[0].studentFirstName}}" required>
+                    <label>Last Name:</label> <input type="text" id="Last" name="Last" value="{{data[0].studentLastName}}" required>
+                    <label>Last Name:</label> <input type="text" id="Email" name="Email" value="{{data[0].studentEmail}}" required>
+
+                    <input type="submit" value="Edit Student" name="edit_students" class="button";">
+                    <a href='/students'><input class="btn" type="button" value="Cancel";"> </a>
+            </form>
+	    </div>
+</div>
+        
+
+            <footer>
+                <p>© 2022   ||   Clara Watson & Jon Moore</p>
+            </footer>
+</body>
+    
+</html>
