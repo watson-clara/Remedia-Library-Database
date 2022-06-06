@@ -83,62 +83,65 @@ sure before going on to make changes in the database.
 
 ## Database Outline:
 * **Students** stores details of the students of the school
-        * studentID: INT, auto_increment, unique, not NULL, PK
-        * studentfirstName: VARCHAR(255), not NULL
-        * studentlastName: VARCHAR(255), not NULL
-        * studentEmail: VARCHAR(255), not NULL
-    Relationship:
-    ➔ 1:M between Students and Check-Outs
+    * studentID: INT, auto_increment, unique, not NULL, PK
+    * studentfirstName: VARCHAR(255), not NULL
+    * studentlastName: VARCHAR(255), not NULL
+    * studentEmail: VARCHAR(255), not NULL \\
+    Relationship: \\
+    ➔ 1:M between Students and Check-Outs \\
 
 * **CheckedOut**  records the books that are checked out of the library
-        * checkoutID: INT, auto_increment, unique, not NULL, PK
-        * studentID: INT, not NULL,
-        * bookISBN: char(13), not NULL
-        * checkoutDate: DATE, DEFAULT(curdate())
-        * returnDate: DATE, DEFAULT (curdate() + 7) 
-        Relationships:
-        ➔ 1:M between Checked-Out and Books 
-        ➔ 1:M between Checked-Out and Students 
-        ➔ M:M also acts as a join table
+    * checkoutID: INT, auto_increment, unique, not NULL, PK
+    * studentID: INT, not NULL,
+    * bookISBN: char(13), not NULL
+    * checkoutDate: DATE, DEFAULT(curdate())
+    * returnDate: DATE, DEFAULT (curdate() + 7) \\
+    Relationships: \\
+    ➔ 1:M between Checked-Out and Books \\
+    ➔ 1:M between Checked-Out and Students \\
+    ➔ M:M also acts as a join table \\
   
 * **Books**  stores details of the books in the library
-        * bookID: INT, auto_increment, unique, not NULL, PK
-        * bookISBN: CHAR(13), not NULL FK
-        * bookTitle: VARCHAR(255), not NULL
-        * authorName: VARCHAR(150), not NULL FK
-        * bookYearPublished: CHAR(4)
-        * bookPublisher: VARCHAR(255), not NULL
-        * genreID: INT, auto_increment, unique, not NULL, FK
-        * subjectID: int, auto_increment, unique, not NULL, FK
-        * bookCopies: INT, not NULL
-        Relationships:
-        ➔ M:1 between Checked-Out to Books
-        ➔ 1:MbetweenBookstoAuthor
-        ➔ 1:M between Books to Subject
-        ➔ 1:M between Books to Genre
-        ➔ 1:M between Books to Borrow_Records
+    * bookID: INT, auto_increment, unique, not NULL, PK
+    * bookISBN: CHAR(13), not NULL FK
+    * bookTitle: VARCHAR(255), not NULL
+    * authorName: VARCHAR(150), not NULL FK
+    * bookYearPublished: CHAR(4)
+    * bookPublisher: VARCHAR(255), not NULL
+    * genreID: INT, auto_increment, unique, not NULL, FK
+    * subjectID: int, auto_increment, unique, not NULL, FK
+    * bookCopies: INT, not NULL \\
+    Relationships: \\
+    ➔ M:1 between Checked-Out to Books \\
+    ➔ 1:MbetweenBookstoAuthor \\
+    ➔ 1:M between Books to Subject \\
+    ➔ 1:M between Books to Genre \\
+    ➔ 1:M between Books to Borrow_Records \\
+    
 *  **Author**  stores details of the different authors in the library
-        * authorID: INT, auto_increment, unique, not NULL, PK
-        * authorName: VARCHAR(150), not NULL
-        Relationships:
-        ➔ M:1betweenBookstoAuthor
+    * authorID: INT, auto_increment, unique, not NULL, PK
+    * authorName: VARCHAR(150), not NULL \\
+    Relationships: \\
+    ➔ M:1betweenBookstoAuthor \\
+    
 * **Subject**  stores details of the subjects represented in the library
-        * subjectID: int, auto_increment, unique, not NULL, PK
-        * subjectName: CHAR(255), not NULL
-        * subjectCount: INT, not NULL, zero fill, calculated sum of books in subject 
-        Relationships:
-        ➔ 1:M between Subject and Books
+    * subjectID: int, auto_increment, unique, not NULL, PK
+    * subjectName: CHAR(255), not NULL
+    * subjectCount: INT, not NULL, zero fill, calculated sum of books in subject \\
+    Relationships: \\
+    ➔ 1:M between Subject and Books \\
+        
 * **Genre**  stores details of the genres represented in the library
-        * genreID: INT, auto_increment, unique, not NULL, PK
-        * genreName: VARCHAR(45), not NULL, unique  
-        Relationships:
-        ➔ 1:M between Genres and Books
+    * genreID: INT, auto_increment, unique, not NULL, PK
+    * genreName: VARCHAR(45), not NULL, unique  \\
+    Relationships: \\
+    ➔ 1:M between Genres and Books \\
       
 ## Entity-Relationship Diagram
-   ![ERD!](/images/ERD.jpg "ERD")
+   ![ERD!](https://github.com/watson-clara/CS340-Database-Final/blob/db6ec4e6e111dbeb9a9370c00de49e29d22c2550/templates/images/ERD.png "ERD")
    
 ## Schema
-   ![Schema!](/images/schema.jpg "Schema")
+   ![Schema!](https://github.com/watson-clara/CS340-Database-Final/blob/db6ec4e6e111dbeb9a9370c00de49e29d22c2550/templates/images/schema.png "Schema")
    
 
 
