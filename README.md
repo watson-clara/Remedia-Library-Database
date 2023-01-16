@@ -1,4 +1,4 @@
-# CS340 Database Final 
+# Remedia Library Database
 
 ## Title:
 Anna Elementary School’s Remedia Library Upgrade
